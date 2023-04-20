@@ -1,75 +1,111 @@
+/* Header */
 .headerText {
   background-color: black;
   color: silver;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding: 1em;
 }
+
+/* Buttons */
 button {
   background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
 }
+
 .on {
   color: #000;
 }
+
 .off {
   color: #ccc;
 }
 
+/* Create artist button */
 .CreateArtistButton {
-  margin: 10px 10px 10px 10px;
+  margin: 2% 2% 2% 2%;
   border: 2px solid black;
   border-radius: 5px;
-  padding: 3px;
+  padding: 0.5em;
   background-color: black;
   color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+/* Create artist form */
 .createArtist {
   display: flex;
   flex-direction: column;
-  margin: 10px 10px 10px 10px;
+  margin: 2% 2% 2% 2%;
   border: 2px solid black;
-  padding: 3px;
+  padding: 1em;
   border-radius: 10px;
-  margin: 10px;
   justify-content: center;
-  width: 30%;
-  height: 30%;
+  align-items: center;
+  width: 90%;
+  max-width: 600px;
+  height: auto;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+.createArtist input {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.createArtist label {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
 .artist p {
   text-align: center;
 }
 
-.input {
-  width: 90%;
-}
-
+/* Artist card */
 .artist {
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin: 2%;
   border: 2px solid black;
-  padding: 3px;
+  padding: 1em;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
-  align-self: center;
-  width: 50%;
-  height: 70%;
+  width: 90%;
+  max-width: 200px;
+  height: auto;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.media {
-  display: flex;
-  max-height: 200px;
+.artist h2 {
+  margin-bottom: 0.5em;
+}
+
+.artist img {
   max-width: 200px;
+  height: auto;
   border-radius: 50%;
 }
 
+/* Create list form */
 .createList {
+  float: left;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2% 2% 2% 2%;
+}
+
+.createList input {
+  margin-right: 0.5em;
+  margin-bottom: 1em;
+  width: 60%;
+}
+
+.createList button {
+  margin-bottom: 1em;
+  width: 30%;
 }

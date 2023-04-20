@@ -19,6 +19,6 @@ export const postArtist = async (newArtist) => {
 };
 
 export const getArtists = async () => {
-  const all = await fetch(URL + '/artists');
+  const all = await fetch(URL + '/artistList');
   return all.json();
 };

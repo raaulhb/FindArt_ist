@@ -6,6 +6,8 @@ import React from 'react';
 import CreateArtist from './components/createArtist';
 import { getArtists, postArtist } from './components/apiService';
 import ArtistList from './components/artistList';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
   const [artistList, setArtist] = useState([]);
@@ -21,15 +23,14 @@ function App() {
       <div className="header">
         <Header />
       </div>
-
       <div className="createList">
         <div className="createArtist">
           <CreateArtist artistList={artistList} setArtist={setArtist} />
         </div>
 
-        <div className="artistList">
+        {/* <div className="artistList">
           <ArtistList artists={artistList} />
-        </div>
+        </div> */}
       </div>
       {/* <div className="star-rating">
         <StarRating />

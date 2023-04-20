@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import '../App.css';
 import { postArtist, getArtists } from './apiService';
+import { Link } from 'react-router-dom';
 
 export function CreateArtist({ artistList, setArtist }) {
-  console.log('CreateArtist');
+  //console.log('CreateArtist');
   const [file, setFile] = useState();
   const [newArtist, setNewArtist] = useState({
     name: '',
@@ -14,7 +15,7 @@ export function CreateArtist({ artistList, setArtist }) {
   });
 
   function handleChange(event) {
-    console.log('handleChange');
+    //console.log('handleChange');
     const { name, value } = event.target;
     setNewArtist({ ...newArtist, [name]: value });
   }
@@ -30,7 +31,7 @@ export function CreateArtist({ artistList, setArtist }) {
       return;
     }
 
-    console.log('HandleSubmit');
+    //console.log('HandleSubmit');
 
     const createdArtist = {
       name: newArtist.name,
@@ -46,7 +47,7 @@ export function CreateArtist({ artistList, setArtist }) {
   }
 
   function handleFormSubmit(event) {
-    console.log('handleFormSubmit');
+    //console.log('handleFormSubmit');
     event.preventDefault();
     setNewArtist({
       name: '',
@@ -57,21 +58,21 @@ export function CreateArtist({ artistList, setArtist }) {
     });
   }
 
-  async function handleCreateButtonClick() {
-    console.log('handleCreateButtonClick');
-    console.log(newArtist.name);
-    console.log(newArtist.style);
-    console.log(newArtist.about);
-    console.log('this is portfolio', newArtist.portfolio);
+  async function handleCreateButtonClick(event) {
+    event.preventDefault();
+    // console.log('handleCreateButtonClick');
+    // console.log(newArtist.name);
+    // console.log(newArtist.style);
+    // console.log(newArtist.about);
+    // console.log('this is portfolio', newArtist.portfolio);
+    //console.log(file);
 
-    console.log(file);
     let url = '';
     if (file) {
       url = await uploadToCloud(file);
     }
 
     newArtist.portfolio = url;
-    console.log('newArtis', newArtist);
     handleSubmit(newArtist);
   }
 
@@ -103,7 +104,7 @@ export function CreateArtist({ artistList, setArtist }) {
       <div className="artist-creator">
         <h3 className="createNewArtistText">Create Artist Profile Here:</h3>
 
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleCreateButtonClick}>
           <div className="ArtistName">
             <label>Name:</label>
             <br></br>
@@ -155,10 +156,7 @@ export function CreateArtist({ artistList, setArtist }) {
           </div>
 
           <div className="button-submit">
-            <button
-              className="CreateArtistButton"
-              type="submit"
-              onClick={handleCreateButtonClick}>
+            <button className="CreateArtistButton" type="submit">
               Create Artist
             </button>
           </div>
