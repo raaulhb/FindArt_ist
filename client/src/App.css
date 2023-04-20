@@ -1,0 +1,75 @@
+.headerText {
+  background-color: black;
+  color: silver;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color: #000;
+}
+.off {
+  color: #ccc;
+}
+
+.CreateArtistButton {
+  margin: 10px 10px 10px 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: black;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.createArtist {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px 10px 10px;
+  border: 2px solid black;
+  padding: 3px;
+  border-radius: 10px;
+  margin: 10px;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.artist p {
+  text-align: center;
+}
+
+.input {
+  width: 90%;
+}
+
+.artist {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  border: 2px solid black;
+  padding: 3px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 50%;
+  height: 70%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.media {
+  display: flex;
+  max-height: 200px;
+  max-width: 200px;
+  border-radius: 50%;
+}
+
+.createList {
+  display: flex;
+}
