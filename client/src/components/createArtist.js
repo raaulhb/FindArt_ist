@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import '../App.css';
 import { postArtist, getArtists } from './apiService';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export function CreateArtist({ artistList, setArtist }) {
-  //console.log('CreateArtist');
   const [file, setFile] = useState();
   const [newArtist, setNewArtist] = useState({
     name: '',
@@ -14,14 +13,16 @@ export function CreateArtist({ artistList, setArtist }) {
     portfolio: '',
   });
 
+  const navigate = useNavigate(); // use to redirect the pages
+
   function handleChange(event) {
-    //console.log('handleChange');
     const { name, value } = event.target;
     setNewArtist({ ...newArtist, [name]: value });
   }
 
   function handleSubmit(newArtist) {
     if (
+      //all this filds are mandatory when creating a new artist profile
       !newArtist.name ||
       !newArtist.style ||
       !newArtist.about ||
@@ -30,8 +31,6 @@ export function CreateArtist({ artistList, setArtist }) {
       alert('Mantatory fields must be filled');
       return;
     }
-
-    //console.log('HandleSubmit');
 
     const createdArtist = {
       name: newArtist.name,
@@ -43,29 +42,14 @@ export function CreateArtist({ artistList, setArtist }) {
 
     postArtist(createdArtist).then((savedArtist) => {
       setArtist([...artistList, savedArtist]);
-    });
-  }
-
-  function handleFormSubmit(event) {
-    //console.log('handleFormSubmit');
-    event.preventDefault();
-    setNewArtist({
-      name: '',
-      style: '',
-      ratings: 0,
-      about: '',
-      portfolio: '',
+      navigate('/profile', {
+        state: savedArtist,
+      }); //after submiting the form, it redirects you to next page
     });
   }
 
   async function handleCreateButtonClick(event) {
     event.preventDefault();
-    // console.log('handleCreateButtonClick');
-    // console.log(newArtist.name);
-    // console.log(newArtist.style);
-    // console.log(newArtist.about);
-    // console.log('this is portfolio', newArtist.portfolio);
-    //console.log(file);
 
     let url = '';
     if (file) {
@@ -95,7 +79,6 @@ export function CreateArtist({ artistList, setArtist }) {
   };
 
   function handleImageChange(e) {
-    console.log('handleImageChange');
     setFile(e.target.files[0]);
   }
 

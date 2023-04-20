@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ArtistList from './components/artistList';
-
+import Profile from './components/fullArtistProfile';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -14,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: '/artistList',
     element: <ArtistList artists={[]} />,
+  },
+  {
+    path: '/profile',
+    element: <Profile />,
   },
 ]);
 

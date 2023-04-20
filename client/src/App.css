@@ -48,6 +48,8 @@ button {
   max-width: 600px;
   height: auto;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: silver;
+  background-color: black;
 }
 
 .createArtist input {
@@ -78,6 +80,9 @@ button {
   max-width: 200px;
   height: auto;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  font-weight: bold;
+  color: silver;
+  background-color: black;
 }
 
 .artist h2 {
@@ -102,10 +107,13 @@ button {
 .createList input {
   margin-right: 0.5em;
   margin-bottom: 1em;
-  width: 60%;
+  width: 95%;
 }
 
 .createList button {
   margin-bottom: 1em;
   width: 30%;
+  background-color: silver;
+  color: black;
+  font-weight: bold;
 }
