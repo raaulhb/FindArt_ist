@@ -12,9 +12,9 @@ export const postArtist = async (newArtist) => {
   })
     .then((response) => response.json())
     .catch((error) => {
-      console.log('Error: ', error);
+      // console.log('Error: ', error);
     });
-  console.log('res in  api service : ', response);
+  // console.log('res in  api service : ', response);
   return response;
 };
 

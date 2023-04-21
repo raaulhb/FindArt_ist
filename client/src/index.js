@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ArtistList from './components/artistList';
 import Profile from './components/fullArtistProfile';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const router = createBrowserRouter([
   {
     path: '/',

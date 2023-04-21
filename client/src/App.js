@@ -8,6 +8,7 @@ import { getArtists, postArtist } from './components/apiService';
 import ArtistList from './components/artistList';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import MultiUpload from './components/artistMedia';
 
 function App() {
   const [artistList, setArtist] = useState([]);
@@ -20,6 +21,8 @@ function App() {
 
   return (
     <div className="App">
+      {/* <MultiUpload /> */}
+
       <div className="header">
         <Header />
       </div>

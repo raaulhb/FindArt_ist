@@ -2,8 +2,9 @@ import Artist from './artist';
 import { getArtists } from './apiService';
 import { useState, useEffect } from 'react';
 import Header from './header';
+import MultiUpload from './artistMedia';
 
-export function ArtistList({ artists }) {
+function ArtistList({ artists }) {
   const [artistList, setArtist] = useState([]);
 
   useEffect(() => {

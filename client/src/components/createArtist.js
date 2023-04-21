@@ -62,7 +62,7 @@ export function CreateArtist({ artistList, setArtist }) {
 
   const uploadToCloud = async (file) => {
     const formData = new FormData();
-    console.log(' file', file);
+    // console.log(' file', file);
     formData.append('file', file);
     formData.append('upload_preset', 'FindArtist');
     const res = await fetch(
@@ -74,7 +74,7 @@ export function CreateArtist({ artistList, setArtist }) {
     );
 
     const response = await res.json();
-    console.log('response', response);
+    // console.log('response', response);
     return response.url;
   };
 
