@@ -6,8 +6,8 @@ const artistSchema = new Schema({
   style: String,
   ratings: Number,
   about: String,
-  portfolio: String,
-  media: [String],
+  profilePic: String,
+  artistMedia: Array,
 });
 
 const ArtistList = mongoose.model('ArtistList', artistSchema);

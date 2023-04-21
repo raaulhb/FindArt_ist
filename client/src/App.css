@@ -141,6 +141,7 @@ button {
 .artistDetails {
   border: 2px solid green;
   max-width: 200px;
+  text-align: center;
 }
 
 .MediaContainer {

@@ -1,5 +1,3 @@
-//import { response } from 'express';
-
 const URL = 'http://localhost:3000';
 
 export const postArtist = async (newArtist) => {
@@ -11,10 +9,7 @@ export const postArtist = async (newArtist) => {
     body: JSON.stringify(newArtist),
   })
     .then((response) => response.json())
-    .catch((error) => {
-      // console.log('Error: ', error);
-    });
-  // console.log('res in  api service : ', response);
+    .catch((error) => {});
   return response;
 };
 

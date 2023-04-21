@@ -10,7 +10,7 @@ export function CreateArtist({ artistList, setArtist }) {
     style: '',
     ratings: 0,
     about: '',
-    portfolio: '',
+    profilePic: '',
   });
 
   const navigate = useNavigate(); // use to redirect the pages
@@ -26,7 +26,7 @@ export function CreateArtist({ artistList, setArtist }) {
       !newArtist.name ||
       !newArtist.style ||
       !newArtist.about ||
-      !newArtist.portfolio
+      !newArtist.profilePic
     ) {
       alert('Mantatory fields must be filled');
       return;
@@ -37,12 +37,12 @@ export function CreateArtist({ artistList, setArtist }) {
       style: newArtist.style,
       ratings: newArtist.ratings,
       about: newArtist.about,
-      portfolio: newArtist.portfolio,
+      profilePic: newArtist.profilePic,
     };
 
     postArtist(createdArtist).then((savedArtist) => {
       setArtist([...artistList, savedArtist]);
-      navigate('/profile', {
+      navigate('/artistList', {
         state: savedArtist,
       }); //after submiting the form, it redirects you to next page
     });
@@ -56,7 +56,7 @@ export function CreateArtist({ artistList, setArtist }) {
       url = await uploadToCloud(file);
     }
 
-    newArtist.portfolio = url;
+    newArtist.profilePic = url;
     handleSubmit(newArtist);
   }
 
@@ -127,13 +127,13 @@ export function CreateArtist({ artistList, setArtist }) {
               required></input>
           </div>
 
-          <div className="Artistportfolio">
-            <label>Select portfolio media:</label>
+          <div className="ArtistprofilePic">
+            <label>Select profilePic:</label>
             <br></br>
             <input
               className="input"
               type="file"
-              name="portfolio"
+              name="profilePic"
               onChange={handleImageChange}
               required></input>
           </div>

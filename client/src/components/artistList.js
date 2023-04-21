@@ -13,7 +13,6 @@ function ArtistList({ artists }) {
     });
   }, []);
 
-  // console.log(artists);
   return (
     <>
       <Header></Header>

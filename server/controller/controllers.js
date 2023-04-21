@@ -7,7 +7,7 @@ async function postArtist(req, res) {
     style: req.body.style,
     ratings: req.body.ratings,
     about: req.body.about,
-    portfolio: req.body.portfolio,
+    profilePic: req.body.profilePic,
   };
   try {
     const artist = await ArtistList.create(newRecord);

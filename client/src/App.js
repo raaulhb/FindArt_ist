@@ -30,14 +30,7 @@ function App() {
         <div className="createArtist">
           <CreateArtist artistList={artistList} setArtist={setArtist} />
         </div>
-
-        {/* <div className="artistList">
-          <ArtistList artists={artistList} />
-        </div> */}
       </div>
-      {/* <div className="star-rating">
-        <StarRating />
-      </div> */}
     </div>
   );
 }

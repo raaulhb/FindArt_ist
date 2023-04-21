@@ -1,7 +1,11 @@
 import '../App.css';
 import MultiUpload from './artistMedia';
+import MediaGrid from './mediaGrid';
+import { useState } from 'react';
 
 export function Artist({ artist }) {
+  const [media, setMedia] = useState({ array: [] });
+  const [loading, setLoading] = useState('');
   return (
     <div className="artist">
       <div className="artistDetails">
@@ -20,9 +24,16 @@ export function Artist({ artist }) {
         <div className="artistMedia">
           <img className="media" src={artist.portfolio} />
         </div>
-        <MultiUpload />
+        <MultiUpload
+          media={media}
+          setMedia={setMedia}
+          loading={loading}
+          setLoading={setLoading}
+        />
       </div>
-      <div className="artisLoadedMedia">media preview</div>
+      <div className="artisLoadedMedia">
+        <MediaGrid media={media} loading={loading} />
+      </div>
     </div>
   );
 }

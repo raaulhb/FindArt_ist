@@ -6,10 +6,7 @@ import Header from './header';
 import ArtistList from './artistList';
 import Artist from './artist';
 
-const MultiUpload = (props) => {
-  const [media, setMedia] = useState({ array: [] });
-  const [loading, setLoading] = useState('');
-
+const MultiUpload = ({ media, setMedia, loading, setLoading }) => {
   const handleDrop = (files) => {
     const uploaders = files.map((file) => {
       const formData = new FormData();
@@ -31,6 +28,7 @@ const MultiUpload = (props) => {
         .then((response) => {
           const data = response.data;
           const mediaUrl = data.secure_url;
+          //post media url to db
           let specificArrayInObject = media.array;
           specificArrayInObject.push(mediaUrl);
           const newObj = { ...media, specificArrayInObject };
@@ -39,42 +37,14 @@ const MultiUpload = (props) => {
         });
     });
     axios.all(uploaders).then(() => {
+      console.log(uploaders);
       setLoading('false');
     });
   };
 
-  function MediaPreview() {
-    if (loading === 'true') {
-      return <h3>Loading...</h3>;
-    }
-    if (loading === 'false') {
-      return (
-        <div className="artisLoadedMedia">
-          <h3>
-            {media.array.length <= 0
-              ? 'No media'
-              : media.array.map((item) => (
-                  <img
-                    key={item}
-                    alt="uploaded media"
-                    style={{
-                      width: '200px',
-                      height: '200px',
-                      backgroundSize: 'cover',
-                      paddingRight: '15px',
-                    }}
-                    src={item}
-                  />
-                ))}
-          </h3>
-        </div>
-      );
-    }
-  }
-
   return (
     <Container className="MediaContainer">
-      <h1 className="text-center">Upload your media</h1>
+      <h3 className="text-center">Upload your media</h3>
       <div className="upload-container">
         <Dropzone
           className="dropzone"
@@ -90,7 +60,6 @@ const MultiUpload = (props) => {
             </section>
           )}
         </Dropzone>
-        <MediaPreview />
       </div>
     </Container>
   );
