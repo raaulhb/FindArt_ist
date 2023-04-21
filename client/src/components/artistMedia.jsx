@@ -28,7 +28,6 @@ const MultiUpload = ({ media, setMedia, loading, setLoading }) => {
         .then((response) => {
           const data = response.data;
           const mediaUrl = data.secure_url;
-          //post media url to db
           let specificArrayInObject = media.array;
           specificArrayInObject.push(mediaUrl);
           const newObj = { ...media, specificArrayInObject };

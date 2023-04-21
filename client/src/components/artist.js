@@ -1,11 +1,21 @@
 import '../App.css';
 import MultiUpload from './artistMedia';
 import MediaGrid from './mediaGrid';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { editArtist } from './apiService';
 
 export function Artist({ artist }) {
   const [media, setMedia] = useState({ array: [] });
   const [loading, setLoading] = useState('');
+
+  useEffect(() => {
+    if (loading === 'false') {
+      editArtist({ media: media.array, _id: artist._id }).catch((e) =>
+        console.log(e)
+      );
+    }
+  }, [loading]);
+
   return (
     <div className="artist">
       <div className="artistDetails">
@@ -32,6 +42,7 @@ export function Artist({ artist }) {
         />
       </div>
       <div className="artisLoadedMedia">
+        <MediaGrid media={{ array: artist.artistMedia }} loading="false" />
         <MediaGrid media={media} loading={loading} />
       </div>
     </div>

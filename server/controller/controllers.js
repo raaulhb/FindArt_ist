@@ -8,6 +8,7 @@ async function postArtist(req, res) {
     ratings: req.body.ratings,
     about: req.body.about,
     profilePic: req.body.profilePic,
+    artistMedia: req.body.artistMedia,
   };
   try {
     const artist = await ArtistList.create(newRecord);
@@ -29,4 +30,20 @@ async function getArtist(req, res) {
   }
 }
 
-module.exports = { getArtist, postArtist };
+async function editArtist(req, res) {
+  //console.log('req.body', req.body);
+  try {
+    const artist = await ArtistList.findById(req.body._id);
+    const media = artist.artistMedia;
+    const mediaSet = new Set(media.concat(req.body.media));
+    artist.artistMedia = [...mediaSet];
+    await artist.save();
+    console.log(artist);
+    res.sendStatus(200);
+  } catch (error) {
+    res.sendStatus(500);
+    console.log(error);
+  }
+}
+
+module.exports = { getArtist, postArtist, editArtist };
