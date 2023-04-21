@@ -19,6 +19,10 @@ export function Artist({ artist }) {
   return (
     <div className="artist">
       <div className="artistDetails">
+        <div className="artistProfilePic">
+          <img className="artistProfilePic" src={artist.portfolio} />
+        </div>
+
         <div className="artistName">
           <h1>{artist.name}</h1>
         </div>
@@ -34,9 +38,6 @@ export function Artist({ artist }) {
           </p>
         </div>
 
-        <div className="artistProfilePic">
-          <img className="artistProfilePic" src={artist.portfolio} />
-        </div>
         <MultiUpload
           media={media}
           setMedia={setMedia}
