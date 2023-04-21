@@ -21,8 +21,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <MultiUpload /> */}
-
       <div className="header">
         <Header />
       </div>

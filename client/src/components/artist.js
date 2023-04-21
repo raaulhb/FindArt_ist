@@ -19,11 +19,14 @@ export function Artist({ artist }) {
   return (
     <div className="artist">
       <div className="artistDetails">
-        <div className="artist-name">
+        <div className="artistName">
           <h1>{artist.name}</h1>
         </div>
-        <div className="artist-info">
-          <p>My art: {artist.style}</p>
+        <div className="artistInfo">
+          <p>
+            My art: <br></br>
+            {artist.style}
+          </p>
           <br></br>
           <p>
             About the artist: <br></br>
@@ -31,8 +34,8 @@ export function Artist({ artist }) {
           </p>
         </div>
 
-        <div className="artistMedia">
-          <img className="media" src={artist.portfolio} />
+        <div className="artistProfilePic">
+          <img className="artistProfilePic" src={artist.portfolio} />
         </div>
         <MultiUpload
           media={media}
@@ -41,7 +44,8 @@ export function Artist({ artist }) {
           setLoading={setLoading}
         />
       </div>
-      <div className="artisLoadedMedia">
+
+      <div className="artistLoadedMedia">
         <MediaGrid media={{ array: artist.artistMedia }} loading="false" />
         <MediaGrid media={media} loading={loading} />
       </div>

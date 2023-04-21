@@ -43,7 +43,7 @@ const MultiUpload = ({ media, setMedia, loading, setLoading }) => {
 
   return (
     <Container className="MediaContainer">
-      <h3 className="text-center">Upload your media</h3>
+      <p className="UploadPic">Upload your media</p>
       <div className="upload-container">
         <Dropzone
           className="dropzone"
@@ -53,7 +53,6 @@ const MultiUpload = ({ media, setMedia, loading, setLoading }) => {
           {({ getRootProps, getInputProps }) => (
             <section>
               <div {...getRootProps({ className: 'dropzone' })}>
-                <span>folder</span>
                 <p>Drag 'n' drop your media here</p>
               </div>
             </section>

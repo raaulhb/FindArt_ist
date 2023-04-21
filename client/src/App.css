@@ -1,10 +1,14 @@
 /* Header */
 .headerText {
-  background-color: black;
-  color: silver;
+  display: flex;
+  background-color: #f5f5f5;
+  color: #333333;
   margin-left: 2%;
   margin-right: 2%;
   padding: 1em;
+  border-radius: 10px;
+  box-shadow: rgba(49, 197, 19, 0.25) 0px 30px 60px -12px inset,
+    rgba(32, 200, 38, 0.3) 0px 18px 36px -18px inset;
 }
 
 /* Buttons */
@@ -26,12 +30,11 @@ button {
 /* Create artist button */
 .CreateArtistButton {
   margin: 2% 2% 2% 2%;
-  border: 2px solid black;
+  border: 2px solid #333333;
   border-radius: 5px;
   padding: 0.5em;
-  background-color: black;
-  color: white;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #333333;
+  color: #f5f5f5;
 }
 
 /* Create artist form */
@@ -39,7 +42,7 @@ button {
   display: flex;
   flex-direction: column;
   margin: 2% 2% 2% 2%;
-  border: 2px solid black;
+  border: 2px solid #333333;
   padding: 1em;
   border-radius: 10px;
   justify-content: center;
@@ -47,9 +50,8 @@ button {
   width: 90%;
   max-width: 600px;
   height: auto;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  color: silver;
-  background-color: black;
+  color: #f5f5f5;
+  background-color: #333333;
 }
 
 .createArtist input {
@@ -70,17 +72,15 @@ button {
 .artist {
   display: flex;
   margin: 2%;
-  border: 2px solid red;
   padding: 1em;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: auto;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   font-weight: bold;
-  color: silver;
-  background-color: black;
+  color: #f5f5f5;
+  background-color: #333333;
 }
 
 .artist h2 {
@@ -88,7 +88,8 @@ button {
 }
 
 .artist img {
-  max-width: 200px;
+  max-width: 75px;
+  max-height: 75px;
   height: auto;
   border-radius: 50%;
 }
@@ -111,39 +112,57 @@ button {
 .createList button {
   margin-bottom: 1em;
   width: 30%;
-  background-color: silver;
-  color: black;
+  background-color: #f5f5f5;
+  color: #333333;
   font-weight: bold;
 }
 
 .dropzone {
   text-align: center;
   padding: 20px;
-  border: 3px dashed black;
-  background-color: #fafafa;
-  color: #bdbdbd;
-  margin-top: 20px;
+  border: 3px dashed #333333;
+  background-color: #f5f5f5;
+  color: #333333;
+  margin-top: 7px;
+  margin-bottom: 20px;
 }
 
 .upload-container {
   display: flex;
 }
 
-.artisLoadedMedia {
+.artistLoadedMedia {
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
-  justify-content: flex-end;
-  align-items: flex-start;
-  border: 2px solid blueviolet;
+  margin-left: 30;
 }
 
 .artistDetails {
-  border: 2px solid green;
+  /* border: 2px solid green; */
+  border-radius: 10px;
+  box-shadow: rgba(49, 197, 19, 0.25) 0px 30px 60px -12px inset,
+    rgba(32, 200, 38, 0.3) 0px 18px 36px -18px inset;
   max-width: 200px;
   text-align: center;
 }
-
+/* 
 .MediaContainer {
   border: 2px solid orange;
+} */
+
+.UploadPic {
+  margin-top: 35px;
+  margin-bottom: 0px;
+}
+
+.artistInfo {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.artistName {
+  margin: 10px 10px 30px 10px;
+  text-align: center;
 }
