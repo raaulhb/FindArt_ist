@@ -1,30 +1,35 @@
 import React, { useState } from 'react';
+import '../App.css';
 
 const ContactInfo = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
-  const handleOpen = () => {
-    setIsOpen(true);
+  const handleClick = () => {
+    setShowInfo(!showInfo);
   };
 
-  const handleClose = () => {
-    setIsOpen(false);
+  const boxStyle = {
+    opacity: showInfo ? 1 : 0,
+    transform: showInfo ? 'scale(1)' : 'scale(0.5)',
   };
 
   return (
     <div>
-      <button className="artistContactButton" onClick={handleOpen}>
-        Artist Contacts
+      <button onClick={handleClick} className="artistContactButton">
+        {showInfo ? 'Hide Info' : 'Show Info'}
       </button>
-      {isOpen && (
-        <div className="contact-info-box">
-          <p>Email: {props.email}</p>
-          <p>Phone: {props.phone}</p>
-          <p>Ratings: {props.ratings}/5</p>
-          {/* <a href={props.instagramLink}>Instagram</a> */}
-          <button onClick={handleClose}>Close</button>
-        </div>
-      )}
+      <div className="contact-info-box" style={boxStyle}>
+        <p className="contact-info-item">
+          <strong>Email:</strong> {props.email}
+        </p>
+        <p className="contact-info-item">
+          <strong>Phone:</strong> {props.phone}
+        </p>
+        <p className="contact-info-item">
+          <a href={props.instagramLink}>Instagram</a>
+        </p>
+        {/* <button onClick={handleClick} className="contact-info-close"></button> */}
+      </div>
     </div>
   );
 };
