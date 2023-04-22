@@ -209,7 +209,6 @@ button {
 .contact-info-box {
   position: relative;
   background-color: #fff;
-  /* border: 2px solid #ccc; */
   width: 200px;
   height: 200px;
   border-radius: 4px;
@@ -221,7 +220,7 @@ button {
   border-radius: 10px;
   box-shadow: rgba(49, 197, 19, 0.25) 0px 30px 60px -12px inset,
     rgba(32, 200, 38, 0.3) 0px 18px 36px -18px inset;
-  max-width: 200px;
+  width: 340px;
   text-align: center;
 }
 
@@ -239,7 +238,7 @@ button {
   background-color: #333333;
   box-shadow: rgba(49, 197, 19, 0.25) 0px 30px 60px -12px inset,
     rgba(32, 200, 38, 0.3) 0px 18px 36px -18px inset;
-  max-width: 200px;
+  width: 300px;
   text-align: center;
 }
 
@@ -251,4 +250,7 @@ button {
   border: none;
   color: #333;
   cursor: pointer;
+}
+.ArtistAbout {
+  margin-top: 15px;
 }

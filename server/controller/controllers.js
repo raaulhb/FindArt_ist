@@ -4,6 +4,8 @@ async function postArtist(req, res) {
   console.log('A new artist has been created');
   const newRecord = {
     name: req.body.name,
+    email: req.body.email,
+    phone: req.body.phone,
     style: req.body.style,
     ratings: req.body.ratings,
     about: req.body.about,

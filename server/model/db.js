@@ -3,6 +3,8 @@ const { Schema } = mongoose;
 
 const artistSchema = new Schema({
   name: String,
+  email: String,
+  phone: String,
   style: String,
   ratings: Number,
   about: String,

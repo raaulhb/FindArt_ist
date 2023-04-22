@@ -12,6 +12,7 @@ const Artist = ({ artist }) => {
 
   const handleArtistClick = () => {
     setShowInfoBox(!showInfoBox);
+    console.log('artist', artist);
   };
 
   return (
@@ -45,7 +46,7 @@ const Artist = ({ artist }) => {
         </div>
 
         <div>
-          <ContactInfo />
+          <ContactInfo artist={artist} />
         </div>
 
         <MultiUpload

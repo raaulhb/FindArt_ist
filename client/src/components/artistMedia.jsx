@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import Dropzone from 'react-dropzone';
 import { Container } from 'reactstrap';
 import axios from 'axios';
-import Header from './header';
-import ArtistList from './artistList';
-import Artist from './artist';
 
 const MultiUpload = ({ media, setMedia, loading, setLoading }) => {
   const handleDrop = (files) => {

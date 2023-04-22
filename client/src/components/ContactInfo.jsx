@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import MediaGrid from './mediaGrid';
+import StarRating from './StarRating';
+import Artist from './artist';
 import '../App.css';
 
-const ContactInfo = (props) => {
+const ContactInfo = ({ artist }) => {
   const [showInfo, setShowInfo] = useState(false);
 
   const handleClick = () => {
@@ -20,15 +23,13 @@ const ContactInfo = (props) => {
       </button>
       <div className="contact-info-box" style={boxStyle}>
         <p className="contact-info-item">
-          <strong>Email:</strong> {props.email}
+          <strong>Email:</strong> <br></br>
+          {artist.email}
         </p>
         <p className="contact-info-item">
-          <strong>Phone:</strong> {props.phone}
+          <strong>Phone:</strong> <br></br>
+          {artist.phone}
         </p>
-        <p className="contact-info-item">
-          <a href={props.instagramLink}>Instagram</a>
-        </p>
-        {/* <button onClick={handleClick} className="contact-info-close"></button> */}
       </div>
     </div>
   );

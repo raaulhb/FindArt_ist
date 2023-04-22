@@ -7,6 +7,8 @@ export function CreateArtist({ artistList, setArtist }) {
   const [file, setFile] = useState();
   const [newArtist, setNewArtist] = useState({
     name: '',
+    email: '',
+    phone: '',
     style: '',
     ratings: 0,
     about: '',
@@ -24,6 +26,8 @@ export function CreateArtist({ artistList, setArtist }) {
     if (
       //all this filds are mandatory when creating a new artist profile
       !newArtist.name ||
+      !newArtist.email ||
+      !newArtist.phone ||
       !newArtist.style ||
       !newArtist.about ||
       !newArtist.profilePic
@@ -34,6 +38,8 @@ export function CreateArtist({ artistList, setArtist }) {
 
     const createdArtist = {
       name: newArtist.name,
+      email: newArtist.email,
+      phone: newArtist.phone,
       style: newArtist.style,
       ratings: newArtist.ratings,
       about: newArtist.about,
@@ -101,17 +107,48 @@ export function CreateArtist({ artistList, setArtist }) {
               required></input>
           </div>
 
-          <div className="ArtistStyle">
-            <label>Style:</label>
+          <div className="ArtistEmail">
+            <label>Email to be contact:</label>
             <br></br>
             <input
               className="input"
               type="text"
-              placeholder="Insert your art style here"
+              placeholder="Enter your email address"
+              name="email"
+              value={newArtist.email}
+              onChange={handleChange}
+              required></input>
+          </div>
+
+          <div className="ArtistPhone">
+            <label>Phone number to be contact:</label>
+            <br></br>
+            <input
+              className="input"
+              type="text"
+              placeholder="Enter your phone number"
+              name="phone"
+              value={newArtist.phone}
+              onChange={handleChange}></input>
+          </div>
+
+          <div className="ArtistStyle">
+            <label>Style:</label>
+            <br />
+            <select
+              className="ArtStyleSelect"
               name="style"
               value={newArtist.style}
               onChange={handleChange}
-              required></input>
+              required>
+              <option value="">Select an art style</option>
+              <option value="Tattoo">Tattoo</option>
+              <option value="Painting">Painting</option>
+              <option value="DJ">DJ</option>
+              <option value="Live Band">Live Band</option>
+              <option value="Pottery">Pottery</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
 
           <div className="ArtistAbout">
