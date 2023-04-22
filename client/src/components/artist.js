@@ -20,7 +20,7 @@ export function Artist({ artist }) {
     <div className="artist">
       <div className="artistDetails">
         <div className="artistProfilePic">
-          <img className="artistProfilePic" src={artist.portfolio} />
+          <img className="artistProfilePic" src={artist.profilePic} />
         </div>
 
         <div className="artistName">
