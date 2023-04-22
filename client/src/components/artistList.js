@@ -3,6 +3,7 @@ import { getArtists } from './apiService';
 import { useState, useEffect } from 'react';
 import Header from './header';
 import MultiUpload from './artistMedia';
+import ContactInfo from './ContactInfo';
 
 function ArtistList({ artists }) {
   const [artistList, setArtist] = useState([]);

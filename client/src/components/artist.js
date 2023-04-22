@@ -1,41 +1,51 @@
+import React, { useState } from 'react';
 import '../App.css';
 import MultiUpload from './artistMedia';
 import MediaGrid from './mediaGrid';
-import { useState, useEffect } from 'react';
-import { editArtist } from './apiService';
+import StarRating from './StarRating';
+import ContactInfo from './ContactInfo';
 
-export function Artist({ artist }) {
+const Artist = ({ artist }) => {
   const [media, setMedia] = useState({ array: [] });
   const [loading, setLoading] = useState('');
+  const [showInfoBox, setShowInfoBox] = useState(false);
 
-  useEffect(() => {
-    if (loading === 'false') {
-      editArtist({ media: media.array, _id: artist._id }).catch((e) =>
-        console.log(e)
-      );
-    }
-  }, [loading]);
+  const handleArtistClick = () => {
+    setShowInfoBox(!showInfoBox);
+  };
 
   return (
     <div className="artist">
       <div className="artistDetails">
         <div className="artistProfilePic">
-          <img className="artistProfilePic" src={artist.profilePic} />
+          <img
+            className="artistProfilePic"
+            src={artist.profilePic}
+            alt={artist.name}
+          />
         </div>
 
-        <div className="artistName">
+        <div className="artistName" onClick={handleArtistClick}>
           <h1>{artist.name}</h1>
+        </div>
+
+        <div className="ratings">
+          <StarRating />
         </div>
         <div className="artistInfo">
           <p>
-            My art: <br></br>
+            My art: <br />
             {artist.style}
           </p>
-          <br></br>
+          <br />
           <p>
-            About the artist: <br></br>
+            About the artist: <br />
             {artist.about}
           </p>
+        </div>
+
+        <div>
+          <ContactInfo />
         </div>
 
         <MultiUpload
@@ -52,6 +62,6 @@ export function Artist({ artist }) {
       </div>
     </div>
   );
-}
+};
 
 export default Artist;
