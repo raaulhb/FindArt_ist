@@ -4,6 +4,7 @@ export function Header({ artistList, setArtist, selectedHandler }) {
       <h2>FindArt_ist</h2>
       <select className="selectStyle" onChange={selectedHandler}>
         <option value="">Select an art style</option>
+        <option value="All">All</option>
         <option value="Tattoo">Tattoo</option>
         <option value="Painting">Painting</option>
         <option value="Street Art">Street Art</option>

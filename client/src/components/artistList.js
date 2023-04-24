@@ -10,7 +10,7 @@ function ArtistList({ artists }) {
   const selectedHandler = (event) => {
     const selectedStyle = event.target.value;
     console.log(selectedStyle);
-    if (selectedStyle === 'all') {
+    if (selectedStyle === 'All') {
       setArtist(fullArtistList);
     } else {
       const filteredArtists = fullArtistList.filter(
