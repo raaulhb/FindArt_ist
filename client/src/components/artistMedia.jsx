@@ -35,7 +35,7 @@ const MultiUpload = ({ media, setMedia, loading, setLoading, _id }) => {
         });
     });
     axios.all(uploaders).then(() => {
-      console.log(uploaders);
+      // console.log(uploaders);
       setLoading('false');
     });
     Promise.all(uploaders).then((res) => {

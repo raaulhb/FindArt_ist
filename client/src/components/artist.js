@@ -12,10 +12,9 @@ const Artist = ({ artist }) => {
 
   const handleArtistClick = () => {
     setShowInfoBox(!showInfoBox);
-    // console.log('artist', artist);
   };
 
-  console.log(artist);
+  // console.log(artist);
 
   return (
     <div className="artist">

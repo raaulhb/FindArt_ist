@@ -5,7 +5,7 @@ function MediaGrid({ loading, media }) {
   const [selectedMedia, setSelectedMedia] = useState(null);
   const [hasMedia, setHasMedia] = useState(false);
 
-  console.log(media);
+  // console.log(media);
 
   useEffect(() => {
     if (media.array.length > 0) {
