@@ -17,7 +17,7 @@ const MultiUpload = ({ media, setMedia, loading, setLoading, _id }) => {
       setLoading('true');
       return axios
         .post(
-          'https://api.cloudinary.com/v1_1/df8esp18z/image/upload',
+          'https://api.cloudinary.com/v1_1/df8esp18z/auto/upload',
           formData,
           {
             headers: { 'X-Requested-With': 'XMLHttpRequest' },
@@ -39,7 +39,6 @@ const MultiUpload = ({ media, setMedia, loading, setLoading, _id }) => {
       setLoading('false');
     });
     Promise.all(uploaders).then((res) => {
-      // send res to backend and store it in user artistMedia field
       const body = { _id, media: res };
       editArtist(body);
     });
