@@ -59,7 +59,6 @@ const Artist = ({ artist }) => {
           setLoading={setLoading}
         />
       </div>
-
       <div className="artistLoadedMedia">
         <MediaGrid media={{ array: artist.artistMedia }} loading="false" />
         <MediaGrid media={media} loading={loading} />

@@ -128,12 +128,10 @@ button {
   flex-wrap: wrap;
   flex-grow: 1;
   margin-left: 30px;
-  height: 500px;
   overflow: scroll;
 }
 
 .artistDetails {
-  /* border: 2px solid green; */
   border-radius: 10px;
   box-shadow: rgba(49, 197, 19, 0.25) 0px 30px 60px -12px inset,
     rgba(32, 200, 38, 0.3) 0px 18px 36px -18px inset;
@@ -164,16 +162,6 @@ button {
   height: auto;
   border-radius: 50%;
 }
-/* .mediaImage {
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  background-size: cover;
-  padding-right: 15px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-} */
 
 .contact-info-box {
   position: absolute;
@@ -203,8 +191,8 @@ button {
 .contact-info-box {
   position: relative;
   background-color: #fff;
-  width: 200px;
-  height: 200px;
+  width: 335px;
+  height: auto;
   border-radius: 4px;
   padding: 16px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
@@ -214,7 +202,6 @@ button {
   border-radius: 10px;
   box-shadow: rgba(49, 197, 19, 0.25) 0px 30px 60px -12px inset,
     rgba(32, 200, 38, 0.3) 0px 18px 36px -18px inset;
-  width: 3px;
   text-align: center;
 }
 
@@ -225,7 +212,7 @@ button {
 
 .contact-info-box .contact-info-item {
   margin: 0;
-  margin-top: 30px;
+  margin-top: 10px;
   font-size: 14px;
   line-height: 1.5;
   border-radius: 10px;
@@ -245,14 +232,12 @@ button {
   color: #333;
   cursor: pointer;
 }
-.ArtistAbout {
-  margin-top: 15px;
-}
 
 .media {
   width: 100px;
   height: 100px;
   border-radius: 10px;
+  object-fit: cover;
   margin-bottom: 15px;
   background-size: cover;
   padding-right: 15px;
@@ -264,4 +249,7 @@ button {
   width: 400px;
   height: 400px;
   transition: all 0.3s ease;
+}
+
+.mediaGridText {
 }
