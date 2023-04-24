@@ -5,17 +5,25 @@ import Header from './header';
 
 function ArtistList({ artists }) {
   const [artistList, setArtist] = useState([]);
+  const [fullArtistList, setFullArtistList] = useState([]);
 
   const selectedHandler = (event) => {
-    console.log(event.target.value);
-    setArtist(
-      artistList.filter((artist) => artist.style === event.target.value)
-    );
+    const selectedStyle = event.target.value;
+    console.log(selectedStyle);
+    if (selectedStyle === 'all') {
+      setArtist(fullArtistList);
+    } else {
+      const filteredArtists = fullArtistList.filter(
+        (artist) => artist.style === selectedStyle
+      );
+      setArtist(filteredArtists);
+    }
   };
 
   useEffect(() => {
     getArtists().then((res) => {
       setArtist(res);
+      setFullArtistList(res);
     });
   }, []);
 
@@ -33,4 +41,5 @@ function ArtistList({ artists }) {
     </>
   );
 }
+
 export default ArtistList;
