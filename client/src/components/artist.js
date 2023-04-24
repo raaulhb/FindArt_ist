@@ -12,7 +12,7 @@ const Artist = ({ artist }) => {
 
   const handleArtistClick = () => {
     setShowInfoBox(!showInfoBox);
-    console.log('artist', artist);
+    // console.log('artist', artist);
   };
 
   console.log(artist);
@@ -28,7 +28,7 @@ const Artist = ({ artist }) => {
           />
         </div>
 
-        <div className="artistName" onClick={handleArtistClick}>
+        <div className="artistName">
           <h1>{artist.name}</h1>
         </div>
 

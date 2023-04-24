@@ -5,7 +5,7 @@ import MultiUpload from './artistMedia';
 
 function Profile(props) {
   const { state } = useLocation();
-  console.log('inside profile', state);
+  // console.log('inside profile', state);
   return (
     <>
       <div>

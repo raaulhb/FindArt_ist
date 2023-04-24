@@ -10,7 +10,7 @@ function ArtistList({ artists }) {
 
   useEffect(() => {
     getArtists().then((res) => {
-      console.log(res);
+      // console.log(res);
       setArtist(res);
     });
   }, []);
