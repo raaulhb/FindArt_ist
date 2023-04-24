@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import Dropzone from 'react-dropzone';
 import { Container } from 'reactstrap';
 import axios from 'axios';
+import { editArtist } from './apiService';
 
-const MultiUpload = ({ media, setMedia, loading, setLoading }) => {
+const MultiUpload = ({ media, setMedia, loading, setLoading, _id }) => {
   const handleDrop = (files) => {
     const uploaders = files.map((file) => {
       const formData = new FormData();
@@ -30,11 +31,17 @@ const MultiUpload = ({ media, setMedia, loading, setLoading }) => {
           const newObj = { ...media, specificArrayInObject };
           setMedia(newObj);
           console.log(media);
+          return data.secure_url;
         });
     });
     axios.all(uploaders).then(() => {
       console.log(uploaders);
       setLoading('false');
+    });
+    Promise.all(uploaders).then((res) => {
+      // send res to backend and store it in user artistMedia field
+      const body = { _id, media: res };
+      editArtist(body);
     });
   };
 

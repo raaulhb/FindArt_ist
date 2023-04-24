@@ -33,7 +33,7 @@ async function getArtist(req, res) {
 }
 
 async function editArtist(req, res) {
-  //console.log('req.body', req.body);
+  console.log('req.body', req.body);
   try {
     const artist = await ArtistList.findById(req.body._id);
     const media = artist.artistMedia;

@@ -144,6 +144,7 @@ export function CreateArtist({ artistList, setArtist }) {
               <option value="">Select an art style</option>
               <option value="Tattoo">Tattoo</option>
               <option value="Painting">Painting</option>
+              <option value="Street Art">Street Art</option>
               <option value="DJ">DJ</option>
               <option value="Live Band">Live Band</option>
               <option value="Pottery">Pottery</option>

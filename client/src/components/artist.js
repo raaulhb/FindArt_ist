@@ -15,6 +15,8 @@ const Artist = ({ artist }) => {
     console.log('artist', artist);
   };
 
+  console.log(artist);
+
   return (
     <div className="artist">
       <div className="artistDetails">
@@ -50,6 +52,7 @@ const Artist = ({ artist }) => {
         </div>
 
         <MultiUpload
+          _id={artist._id}
           media={media}
           setMedia={setMedia}
           loading={loading}
