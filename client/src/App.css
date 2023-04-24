@@ -164,7 +164,7 @@ button {
   height: auto;
   border-radius: 50%;
 }
-.mediaImage {
+/* .mediaImage {
   width: 100px;
   height: 100px;
   border-radius: 10px;
@@ -173,13 +173,7 @@ button {
   padding-right: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.selected {
-  width: 400px;
-  height: 400px;
-  transition: all 0.3s ease;
-}
+} */
 
 .contact-info-box {
   position: absolute;
@@ -220,7 +214,7 @@ button {
   border-radius: 10px;
   box-shadow: rgba(49, 197, 19, 0.25) 0px 30px 60px -12px inset,
     rgba(32, 200, 38, 0.3) 0px 18px 36px -18px inset;
-  width: 340px;
+  width: 3px;
   text-align: center;
 }
 
@@ -253,4 +247,21 @@ button {
 }
 .ArtistAbout {
   margin-top: 15px;
+}
+
+.media {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background-size: cover;
+  padding-right: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.selected {
+  width: 400px;
+  height: 400px;
+  transition: all 0.3s ease;
 }
