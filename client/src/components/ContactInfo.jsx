@@ -27,7 +27,7 @@ const ContactInfo = ({ artist }) => {
           {artist.email}
         </p>
         <p className="contact-info-item">
-          <strong>Phone:</strong> <br></br>
+          <strong>Phone/WhatsApp:</strong> <br></br>
           {artist.phone}
         </p>
       </div>

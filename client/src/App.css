@@ -61,7 +61,7 @@ button {
   display: flex;
   flex-direction: column;
   margin: 2% 2% 2% 2%;
-  border: 2px solid #333333;
+
   padding: 1em;
   border-radius: 10px;
   justify-content: center;
@@ -69,8 +69,10 @@ button {
   width: 90%;
   max-width: 600px;
   height: auto;
-  color: #f5f5f5;
-  background-color: #333333;
+  background-color: #f5f5f5;
+  color: #333333;
+  box-shadow: rgba(49, 197, 19, 0.25) 0px 30px 60px -12px inset,
+    rgba(32, 200, 38, 0.3) 0px 18px 36px -18px inset;
 }
 
 .createArtist input {
@@ -96,11 +98,11 @@ button {
   border-radius: 10px;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 60%;
   height: auto;
   font-weight: bold;
-  color: #f5f5f5;
-  background-color: #333333;
+  color: #333333;
+  background-color: #f5f5f5;
 }
 
 .artist h2 {
@@ -201,7 +203,7 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 1em;
 }
 
@@ -244,11 +246,13 @@ button {
 
 .contact-info-box .contact-info-item {
   margin: 0;
+  color: #333333;
+  background-color: #f5f5f5;
   margin-top: 10px;
   font-size: 14px;
   line-height: 1.5;
   border-radius: 10px;
-  background-color: #333333;
+  /* background-color: #333333; */
   box-shadow: rgba(49, 197, 19, 0.25) 0px 30px 60px -12px inset,
     rgba(32, 200, 38, 0.3) 0px 18px 36px -18px inset;
   width: 300px;

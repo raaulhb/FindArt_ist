@@ -121,7 +121,7 @@ export function CreateArtist({ artistList, setArtist }) {
           </div>
 
           <div className="ArtistPhone">
-            <label>Phone number to be contact:</label>
+            <label>Phone/WhatsApp:</label>
             <br></br>
             <input
               className="input"
