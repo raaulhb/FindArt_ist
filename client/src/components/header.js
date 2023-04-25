@@ -1,9 +1,8 @@
 export function Header({ artistList, setArtist, selectedHandler }) {
   return (
-    <div className="headerText">
-      <h2>FindArt_ist</h2>
+    <div className="header">
+      <h2 className="headerLogo">FindArt_ist</h2>
       <select className="selectStyle" onChange={selectedHandler}>
-        <option value="">Select an art style</option>
         <option value="All">All</option>
         <option value="Tattoo">Tattoo</option>
         <option value="Painting">Painting</option>
